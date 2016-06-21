@@ -8,7 +8,7 @@ using JsonPatch.Paths;
 
 namespace JsonPatch
 {
-	public class JsonPatchDocumentWithCommands<T, TEntity> : IJsonPatchDocument where TEntity : class, new()
+	public class JsonPatchDocumentWithCommands<T, TEntity> : IJsonPatchCommands<T, TEntity>, IJsonPatchDocument where TEntity : class, new()
 	{
 		private List<JsonPatchOperation> _operations = new List<JsonPatchOperation>();
 
@@ -18,7 +18,7 @@ namespace JsonPatch
 
 		public void Add(string path, object value)
 		{
-			throw new NotImplementedException("Add Operation not supported.");
+			throw new NotImplementedException("Move Operation not supported.");
 		}
 
 		public void Replace(string path, object value)
@@ -34,7 +34,7 @@ namespace JsonPatch
 
 		public void Remove(string path)
 		{
-			throw new NotImplementedException("Remove Operation not supported.");
+			throw new NotImplementedException("Move Operation not supported.");
 		}
 
 		public void Move(string from, string path)

@@ -9,6 +9,6 @@ namespace JsonPatch
 {
 	public interface IJsonPatchCommands<T, TEntity>
 	{
-		IEnumerable<T> ToCommands(TEntity entity);
+		IEnumerable<T> ToCommands(TEntity entity, ICommandMapper<T, TEntity> commandMapper);
 	}
 }
