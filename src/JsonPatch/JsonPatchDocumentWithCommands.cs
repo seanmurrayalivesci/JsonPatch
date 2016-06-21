@@ -42,32 +42,6 @@ namespace JsonPatch
 			throw new NotImplementedException("Move Operation not supported.");
 		}
 
-		/*public void ApplyUpdatesTo(TEntity entity)
-		{
-			foreach (var operation in _operations)
-			{
-				switch (operation.Operation)
-				{
-				case JsonPatchOperationType.remove:
-					PathHelper.SetValueFromPath(typeof(TEntity), operation.ParsedPath, entity, null, JsonPatchOperationType.remove);
-					break;
-				case JsonPatchOperationType.replace:
-					PathHelper.SetValueFromPath(typeof(TEntity), operation.ParsedPath, entity, operation.Value, JsonPatchOperationType.replace);
-					break;
-				case JsonPatchOperationType.add:
-					PathHelper.SetValueFromPath(typeof(TEntity), operation.ParsedPath, entity, operation.Value, JsonPatchOperationType.add);
-					break;
-				case JsonPatchOperationType.move:
-					var value = PathHelper.GetValueFromPath(typeof(TEntity), operation.ParsedFromPath, entity);
-					PathHelper.SetValueFromPath(typeof(TEntity), operation.ParsedFromPath, entity, null, JsonPatchOperationType.remove);
-					PathHelper.SetValueFromPath(typeof(TEntity), operation.ParsedPath, entity, value, JsonPatchOperationType.add);
-					break;
-				default:
-					throw new NotSupportedException("Operation not supported: " + operation.Operation);
-				}
-			}
-		}*/
-
 		public IEnumerable<T> ToCommands(TEntity entity, ICommandMapper<T, TEntity> commandMapper)
 		{
 			var commands = new List<T>();
